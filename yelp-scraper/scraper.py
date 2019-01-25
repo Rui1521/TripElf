@@ -52,7 +52,7 @@ def crawl_page(zipcode, cflt, page_num, global_counter, verbose=False):
         # however this can also be a formatting issue, so watch out
         print('we have hit the end of the zip code', str(e))
         # False is a special flag, returned when quitting
-        return [], False
+        return [], global_counter, False
 
     extracted = []
     local_counter = 0
@@ -113,9 +113,17 @@ def crawl_page(zipcode, cflt, page_num, global_counter, verbose=False):
         try:
             secondaryAttributes = r.find('div', {'class': re.compile(
                 r'secondaryAttributes')}).div.contents
-            phone = secondaryAttributes[0].getText()
-            addr = secondaryAttributes[1].getText()
-            district = secondaryAttributes[2].getText()
+            if len(secondaryAttributes) == 3:
+                phone = secondaryAttributes[0].getText()
+                addr = secondaryAttributes[1].getText()
+                district = secondaryAttributes[2].getText()
+            else:
+                if secondaryAttributes[0].getText()[0] == '(':
+                    phone = secondaryAttributes[0].getText()
+                    addr = secondaryAttributes[1].getText()
+                else:
+                    addr = secondaryAttributes[0].getText()
+                    district = secondaryAttributes[1].getText()
         except Exception as e:
             if verbose:
                 print('secondaryAttributes extract fail', str(e))
@@ -138,30 +146,31 @@ def crawl_page(zipcode, cflt, page_num, global_counter, verbose=False):
         
         extracted.append(title+','+categories+','+dollarPrice+','+rating+','+reviewCount+','+img+','+yelpPage+','+addr+','+district+','+str(zipcode)+','+phone)
         
+        time.sleep(random.randint(1, 2) * .931467298)
+
         if extracted[-1].count(',') != 10:
-            return extracted, False
+            return extracted, global_counter, False
         
     return extracted, global_counter, True
 
 def crawl(zipcode=None):
-    page = 0
-    cflt = '#cflt=restaurants'
-    flag = True
     some_zipcodes = [zipcode] if zipcode else get_zips()
     global_counter = 0
 
     if zipcode is None:
         print('\n**We are attempting to extract all zipcodes in America!**')
     
-    with open('./yelp_listings.csv', 'w') as yelp_listings:
+    with open('./yelp_restaurants_listings.csv', 'w') as yelp_listings:
         yelp_listings.write('title,categories,dollarPrice,rating,reviewCount,img,yelpPage,address,district,zipcode,phone')
         for zipcode in some_zipcodes:
+            page = 0
+            cflt = '#cflt=restaurants'
+            flag = True
             print('\n===== Attempting extraction for zipcode <', zipcode, '>=====\n')
             while flag:
                 extracted, global_counter, flag = crawl_page(zipcode, cflt, page, global_counter)
                 if not flag:
                     print('extraction stopped or broke at zipcode')
-                    print('the last record: ', extracted[-1])
                     break
                 for listing in extracted:
                     yelp_listings.write('\n'+listing)
