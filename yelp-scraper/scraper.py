@@ -30,7 +30,7 @@ def get_zips():
     return zips
 
 
-def crawl_page(zipcode, cflt, page_num, global_counter, verbose=False):
+def crawl_page(zipcode, cflt, page_num, local_counter, global_counter, verbose=False):
     """
     This method takes a page number, yelp GET param, and crawls exactly
     one page. We expect 10 listing per page.
@@ -41,21 +41,18 @@ def crawl_page(zipcode, cflt, page_num, global_counter, verbose=False):
         soup = BeautifulSoup(response.text, 'html.parser')
     except Exception as e:
         print(str(e))
-        return [], False
+        return [], local_counter, global_counter, False
 
     restaurants = soup.find_all('div', attrs={'class':re.compile
             (r'^searchResult')})
     try:
         assert(len(restaurants) == 10)
     except AssertionError as e:
-        # We make a dangerous assumption that yelp has 10 listing per page,
-        # however this can also be a formatting issue, so watch out
         print('we have hit the end of the zip code', str(e))
         # False is a special flag, returned when quitting
-        return [], global_counter, False
+        return [], local_counter, global_counter, False
 
     extracted = []
-    local_counter = 0
     for r in restaurants:
         img = ''
         yelpPage = ''
@@ -70,19 +67,19 @@ def crawl_page(zipcode, cflt, page_num, global_counter, verbose=False):
 
         try:
             img = r.find(
-                'img', {'class': re.compile(r'^photo-box-img')})['src']
+                'img', {'class': re.compile(r'^photo-box-img')})['src'].replace('，', ' ')
         except Exception as e:
             if verbose: print('img extract fail', str(e))
         
         try:
             title = r.find(
-                'h3', {'class': re.compile(r'^heading')}).a.getText()
+                'h3', {'class': re.compile(r'^heading')}).a.getText().replace('，', ' ')
         except Exception as e:
             if verbose: print('title extract fail', str(e))
         
         try:
             yelpPage = 'https://www.yelp.com' + r.find(
-                'h3', {'class': re.compile(r'^heading')}).a['href']
+                'h3', {'class': re.compile(r'^heading')}).a['href'].replace('，', ' ')
         except Exception as e:
             if verbose: print('yelp page link extraction fail', str(e))
             continue
@@ -91,10 +88,10 @@ def crawl_page(zipcode, cflt, page_num, global_counter, verbose=False):
             priceCategories = r.find(
                 'div', {'class': re.compile(r'^priceCategory')}).contents
             if len(priceCategories) == 2:
-                dollarPrice = priceCategories[0].getText()
-                categories = priceCategories[1].getText().replace(', ', ';')
+                dollarPrice = priceCategories[0].getText().replace('，', ' ')
+                categories = priceCategories[1].getText().replace(', ', ';').replace('，', ' ')
             else:
-                categories = priceCategories[0].getText().replace(', ', ';')
+                categories = priceCategories[0].getText().replace(', ', ';').replace('，', ' ')
         except Exception as e:
             if verbose: print("priceCategories extract fail", str(e))
         
@@ -106,7 +103,7 @@ def crawl_page(zipcode, cflt, page_num, global_counter, verbose=False):
         
         try:
             reviewCount = r.find(
-                'span', {'class': re.compile(r'^reviewCount')}).getText().replace(' reviews', '')
+                'span', {'class': re.compile(r'^reviewCount')}).getText().replace(' reviews', '').replace('，', ' ')
         except Exception as e:
             if verbose: print('reviewCount extract fail', str(e))
         
@@ -114,16 +111,16 @@ def crawl_page(zipcode, cflt, page_num, global_counter, verbose=False):
             secondaryAttributes = r.find('div', {'class': re.compile(
                 r'secondaryAttributes')}).div.contents
             if len(secondaryAttributes) == 3:
-                phone = secondaryAttributes[0].getText()
-                addr = secondaryAttributes[1].getText()
-                district = secondaryAttributes[2].getText()
+                phone = secondaryAttributes[0].getText().replace('，', ' ')
+                addr = secondaryAttributes[1].getText().replace('，', ' ')
+                district = secondaryAttributes[2].getText().replace('，', ' ')
             else:
                 if secondaryAttributes[0].getText()[0] == '(':
-                    phone = secondaryAttributes[0].getText()
-                    addr = secondaryAttributes[1].getText()
+                    phone = secondaryAttributes[0].getText().replace('，', ' ')
+                    addr = secondaryAttributes[1].getText().replace('，', ' ')
                 else:
-                    addr = secondaryAttributes[0].getText()
-                    district = secondaryAttributes[1].getText()
+                    addr = secondaryAttributes[0].getText().replace('，', ' ')
+                    district = secondaryAttributes[1].getText().replace('，', ' ')
         except Exception as e:
             if verbose:
                 print('secondaryAttributes extract fail', str(e))
@@ -149,16 +146,16 @@ def crawl_page(zipcode, cflt, page_num, global_counter, verbose=False):
         time.sleep(random.randint(1, 2) * .931467298)
 
         if extracted[-1].count(',') != 10:
-            return extracted, global_counter, False
+            return extracted, local_counter, global_counter, False
         
-    return extracted, global_counter, True
+    return extracted, local_counter, global_counter, True
 
 def crawl(zipcode=None):
     some_zipcodes = [zipcode] if zipcode else get_zips()
     global_counter = 0
 
     if zipcode is None:
-        print('\n**We are attempting to extract all zipcodes in America!**')
+        print('\n**We are attempting to extract all zipcodes in New York City!**')
     
     with open('./yelp_restaurants_listings.csv', 'w') as yelp_listings:
         yelp_listings.write('title,categories,dollarPrice,rating,reviewCount,img,yelpPage,address,district,zipcode,phone')
@@ -166,9 +163,10 @@ def crawl(zipcode=None):
             page = 0
             cflt = '#cflt=restaurants'
             flag = True
+            local_counter = 0
             print('\n===== Attempting extraction for zipcode <', zipcode, '>=====\n')
             while flag:
-                extracted, global_counter, flag = crawl_page(zipcode, cflt, page, global_counter)
+                extracted, local_counter, global_counter, flag = crawl_page(zipcode, cflt, page, local_counter, global_counter)
                 if not flag:
                     print('extraction stopped or broke at zipcode')
                     break
