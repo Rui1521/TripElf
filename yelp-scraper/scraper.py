@@ -21,6 +21,9 @@ ZIP_URL = "zipcodes_nyc.txt"
 FIELD_DELIM = u'###'
 LISTING_DELIM = u'((('
 
+LOCAL_COUNTER = 0
+GLOBAL_COUNTER = 0
+
 def get_zips():
     """
     """
@@ -30,18 +33,21 @@ def get_zips():
     return zips
 
 
-def crawl_page(zipcode, cflt, page_num, local_counter, global_counter, verbose=False):
+def crawl_page(zipcode, cflt, page_num, verbose=False):
     """
     This method takes a page number, yelp GET param, and crawls exactly
     one page. We expect 10 listing per page.
     """
+    global LOCAL_COUNTER
+    global GLOBAL_COUNTER
+
     try:
         page_url = get_yelp_page(zipcode, cflt, page_num)
         response = get(page_url)
         soup = BeautifulSoup(response.text, 'html.parser')
     except Exception as e:
         print(str(e))
-        return [], local_counter, global_counter, False
+        return [], False
 
     restaurants = soup.find_all('div', attrs={'class':re.compile
             (r'^searchResult')})
@@ -50,7 +56,7 @@ def crawl_page(zipcode, cflt, page_num, local_counter, global_counter, verbose=F
     except AssertionError as e:
         print('we have hit the end of the zip code', str(e))
         # False is a special flag, returned when quitting
-        return [], local_counter, global_counter, False
+        return [], False
 
     extracted = []
     for r in restaurants:
@@ -135,25 +141,26 @@ def crawl_page(zipcode, cflt, page_num, local_counter, global_counter, verbose=F
         # if addr: print('address:', addr)
         # if district: print('district:', district)
         # if phone: print('phone:', phone)
+        GLOBAL_COUNTER += 1
+        LOCAL_COUNTER += 1
         
-        local_counter += 1
-        global_counter += 1
-        if local_counter % 10 == 0: 
-            print('Global count: ' + str(global_counter) + ' Local count: ' + str(local_counter) + ' Zipcode: ' + str(zipcode))
+        if LOCAL_COUNTER % 10 == 0: 
+            print('Global count: ' + str(GLOBAL_COUNTER) + ' Local count: ' + str(LOCAL_COUNTER) + ' Zipcode: ' + str(zipcode))
         
         extracted.append(title+','+categories+','+dollarPrice+','+rating+','+reviewCount+','+img+','+yelpPage+','+addr+','+district+','+str(zipcode)+','+phone)
         
-        time.sleep(random.randint(1, 2) * .931467298)
+        time.sleep(random.randint(0, 1) * .931467298)
 
         if extracted[-1].count(',') != 10:
-            return extracted, local_counter, global_counter, False
+            return extracted, False
         
-    return extracted, local_counter, global_counter, True
+    return extracted, True
 
 def crawl(zipcode=None):
     some_zipcodes = [zipcode] if zipcode else get_zips()
-    global_counter = 0
-
+    
+    global LOCAL_COUNTER
+    
     if zipcode is None:
         print('\n**We are attempting to extract all zipcodes in New York City!**')
     
@@ -163,10 +170,10 @@ def crawl(zipcode=None):
             page = 0
             cflt = '#cflt=restaurants'
             flag = True
-            local_counter = 0
+            LOCAL_COUNTER = 0
             print('\n===== Attempting extraction for zipcode <', zipcode, '>=====\n')
             while flag:
-                extracted, local_counter, global_counter, flag = crawl_page(zipcode, cflt, page, local_counter, global_counter)
+                extracted, flag = crawl_page(zipcode, cflt, page)
                 if not flag:
                     print('extraction stopped or broke at zipcode')
                     break
