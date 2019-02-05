@@ -85,8 +85,8 @@ def crawl_page(category, zipcode, page_num, proxy, verbose=False):
             if verbose: print('img extract fail', str(e))
         
         try:
-            title = r.find(
-                'h3', {'class': re.compile(r'^heading')}).a.getText().replace(',', ' ')
+            title = unquote(r.find(
+                'h3', {'class': re.compile(r'^heading')}).a.getText().replace(',', ' '))
         except Exception as e:
             if verbose: print('title extract fail', str(e))
         
@@ -104,9 +104,9 @@ def crawl_page(category, zipcode, page_num, proxy, verbose=False):
                 'div', {'class': re.compile(r'^priceCategory')}).contents
             if len(priceCategories) == 2:
                 dollarPrice = priceCategories[0].getText().replace(',', ' ')
-                categories = priceCategories[1].getText().replace(', ', ';').replace(',', ' ')
+                categories = priceCategories[1].getText().replace(', ', ';')
             else:
-                categories = priceCategories[0].getText().replace(', ', ';').replace(',', ' ')
+                categories = priceCategories[0].getText().replace(', ', ';')
         except Exception as e:
             if verbose: print("priceCategories extract fail", str(e))
         
@@ -118,7 +118,7 @@ def crawl_page(category, zipcode, page_num, proxy, verbose=False):
         
         try:
             reviewCount = r.find(
-                'span', {'class': re.compile(r'^reviewCount')}).getText().replace(' reviews', '').replace(',', ' ')
+                'span', {'class': re.compile(r'^reviewCount')}).getText().replace(' reviews', '').replace(' review', '').replace(',', ' ')
         except Exception as e:
             if verbose: print('reviewCount extract fail', str(e))
         
@@ -167,13 +167,13 @@ def crawl_page(category, zipcode, page_num, proxy, verbose=False):
     time.sleep(random.randint(2, 3) * .493146729)
     
     try:
-        assert(len(extracted) == 30) # restaurants: 30; shopping: 10; nightlife: 30
+        assert(len(extracted) >= 28) # restaurants: 30; shopping: 10; nightlife: 30
     except AssertionError as e:
         # False is a special flag, returned when quitting
         return extracted, False, True
 
     print('Global count: ' + str(GLOBAL_COUNTER) + ' Local count: ' + str(LOCAL_COUNTER) + ' Zipcode: ' + str(zipcode))
-    print(PROXY)
+    # print(PROXY)
     return extracted, True, True
 
 def crawl():
@@ -184,7 +184,7 @@ def crawl():
     proxies = get_proxies()
     proxy_pool = cycle(proxies)
     
-    category = 'nightlife' # restaurants, shopping, nightlife
+    category = 'restaurants' # restaurants, shopping, nightlife
 
     print('\n**We are attempting to extract all ' + category + ' in NYC!**')
     
@@ -205,7 +205,7 @@ def crawl():
                     flag = True
                     continue
                 if not flag:
-                    if page > 30:
+                    if page >= 30:
                         for listing in extracted:
                             yelp_listings.write('\n'+listing)
                         print('we have hit the end of the zip code, extraction stopped or broke at zipcode')

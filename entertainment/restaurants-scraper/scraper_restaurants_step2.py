@@ -21,23 +21,24 @@ GLOBAL_COUNTER = 0
 PROXY = set()
 
 def get_urls():
-    restaurants = pd.read_csv('restaurants_nyc.csv')
+    restaurants = pd.read_csv('restaurants_no_dup_step1.csv')
     urls = restaurants['yelpPage'].tolist()
     return urls
 
-def get_ids():
-    restaurants = pd.read_csv('restaurants_nyc.csv')
-    ids = restaurants['business_id'].tolist()
-    return ids
-
 def get_proxies():
-    proxies = set()
-    with open('./proxies.txt', 'r') as proxies_file:
-        for proxy in proxies_file:
-            proxies.add(proxy[:-1])
-    return proxies
+    try:
+        print("Request a new list of proxies")
+        proxy_list_url = "" # define your proxy list url here
+        proxy_res = requests.get(proxy_list_url, timeout=6.0)
+        proxies = BeautifulSoup(proxy_res.text, 'html.parser').getText().split("\n")
+    except Exception:
+        print("proxy request failed")
+        return [], False
+    for i in range(len(proxies)):
+        proxies[i] = proxies[i]
+    return proxies, True
 
-def crawl_page(id, url, proxy, verbose=False):
+def crawl_page(url, proxy, verbose=False):
 
     global GLOBAL_COUNTER
     global PROXY
@@ -48,7 +49,7 @@ def crawl_page(id, url, proxy, verbose=False):
     zipcode = ''
     
     try:
-        response = requests.get(url.replace('https','http'), proxies={"http": proxy[:-3], "https": proxy[:-3]}, timeout=10.0)
+        response = requests.get(url.replace('https','http'), proxies={"http": proxy[:-3], "https": proxy[:-3]}, timeout=6.0)
         soup = BeautifulSoup(response.text, 'html.parser')
     except requests.Timeout as e:
         print("Time out!")
@@ -57,7 +58,6 @@ def crawl_page(id, url, proxy, verbose=False):
         print(str(e))
         return [], False
     
-    
     r = soup.find('div', {'class': 'main-content-wrap--full'})
     if not r:
         return [], False
@@ -65,18 +65,18 @@ def crawl_page(id, url, proxy, verbose=False):
     try:
         json_text = r.find('div', {'class': re.compile(r'lightbox-map')})['data-map-state']
         data = json.loads(json_text)
-        latitude = str(data['markers'][1]['location']['latitude']).replace('，', ' ')
-        longitude = str(data['markers'][1]['location']['longitude']).replace('，', ' ')
+        latitude = str(data['markers'][1]['location']['latitude']).replace(',', ' ')
+        longitude = str(data['markers'][1]['location']['longitude']).replace(',', ' ')
     except Exception as e:
         if verbose: print('latitude/longitude extract fail', str(e))
     
     try:
-        priceRange = r.find('dd', {'class': re.compile(r'price-description')}).getText().strip().replace('，', ' ')
+        priceRange = r.find('dd', {'class': re.compile(r'price-description')}).getText().strip().replace(',', ' ')
     except Exception as e:
         if verbose: print('priceRange extract fail', str(e))
 
     try:
-        zipcode = r.find('div', {'class': re.compile(r'map-box-address')}).strong.address.getText().strip()[-5:].replace('，', ' ')
+        zipcode = r.find('div', {'class': re.compile(r'map-box-address')}).strong.address.getText().strip()[-5:].replace(',', ' ')
     except Exception as e:
         if verbose: print('zipcode extract fail', str(e))
     
@@ -91,9 +91,10 @@ def crawl_page(id, url, proxy, verbose=False):
         
     GLOBAL_COUNTER += 1
         
-    extracted = id+','+priceRange+','+zipcode+','+','+latitude+','+longitude
+    extracted = url+','+priceRange+','+zipcode+','+latitude+','+longitude
         
     if GLOBAL_COUNTER % 10 == 0:
+        print(url.split("/")[-1])
         print('Global count: ' + str(GLOBAL_COUNTER))
         print(PROXY)
 
@@ -101,35 +102,39 @@ def crawl_page(id, url, proxy, verbose=False):
 
 def crawl():
     
-    ids = get_ids()
     urls = get_urls()
 
-    if len(ids) != len(urls):
-        raise AssertionError
-
-    proxies = get_proxies()
+    proxies, proxy_flag = get_proxies()
     proxy_pool = cycle(proxies)
     
-    print('\n**We are attempting to extract detailed business information in NYC!**')
+    print('\n**We are attempting to extract detailed restaurants information in NYC!**')
     
-    with open('./restaurants_more.csv', 'w') as restaurants_more:
+    with open('./restaurants_step2.csv', 'w') as restaurants_more:
         
-        restaurants_more.write('businessId,priceRange,zipcode,latitude,longitude')
+        restaurants_more.write(
+            'yelpPage,priceRange,exactZipcode,latitude,longitude')
         
         i = 0
         flag = True
         proxy = next(proxy_pool)
 
-        while i < len(ids):  
-            extracted, flag = crawl_page(ids[i], urls[i], proxy)
+        while i < len(urls):  
+            extracted, flag = crawl_page(urls[i], proxy)
             if not flag:
                 print('proxy error, reconnect with the next proxy')
+                proxies.remove(proxy)
+                if len(proxies) == 10:
+                    proxies, proxy_flag = get_proxies()
+                    if not proxy_flag:
+                        break
+                proxy_pool = cycle(proxies)
                 proxy = next(proxy_pool)
+                print('proxy_pool:', len(proxies))
                 flag = True
                 continue
             i += 1
             restaurants_more.write('\n'+extracted)
-            time.sleep(random.randint(0, 1) * .931467298)
+            time.sleep(random.randint(1, 2) * .1931467298)
 
 if __name__ == '__main__':
     crawl()
