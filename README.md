@@ -1,3 +1,3 @@
 # TripElf
 
-Host information
+Airbnb host information
