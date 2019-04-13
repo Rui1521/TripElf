@@ -1,0 +1,234 @@
+neighbourhood,neighbourhood_group,superhost_count,avg_host_response_hour,avg_host_response_rate
+Bayswater,Manhattan,0.00 ,2.44 ,0.94 
+Allerton,Manhattan,7.00 ,5.48 ,0.93 
+City Island,Brooklyn,5.00 ,4.09 ,0.92 
+Ditmars Steinway,Brooklyn,57.00 ,5.42 ,0.95 
+Ozone Park,Brooklyn,10.00 ,6.84 ,0.97 
+Fordham,Manhattan,2.00 ,5.56 ,0.91 
+Whitestone,Manhattan,1.00 ,5.60 ,0.95 
+Arden Heights,Manhattan,0.00 ,12.50 ,0.90 
+Arrochar,Brooklyn,4.00 ,2.16 ,1.00 
+Arverne,Manhattan,23.00 ,9.77 ,0.87 
+Bay Ridge,Manhattan,37.00 ,7.85 ,0.94 
+Belmont,Manhattan,2.00 ,3.13 ,0.93 
+Gerritsen Beach,Brooklyn,2.00 ,12.50 ,0.80 
+Port Ivory,0.00 ,0.00 ,0.00 ,0.00 
+Soundview,Manhattan,3.00 ,4.67 ,1.00 
+Astoria,Manhattan,156.00 ,6.39 ,0.94 
+Bath Beach,Brooklyn,8.00 ,4.83 ,0.97 
+Bayside,Brooklyn,9.00 ,5.16 ,0.96 
+Battery Park City,Manhattan,3.00 ,11.07 ,0.84 
+Bay Terrace,Brooklyn,0.00 ,5.40 ,1.00 
+"Bay Terrace, Staten Island",Manhattan,0.00 ,0.00 ,0.00 
+Baychester,Brooklyn,3.00 ,8.50 ,0.95 
+Bayswater,Manhattan,0.00 ,2.44 ,0.94 
+Bedford-Stuyvesant,Brooklyn,676.00 ,6.23 ,0.94 
+Belle Harbor,Manhattan,1.00 ,2.83 ,1.00 
+Bellerose,Manhattan,1.00 ,2.22 ,0.91 
+Bensonhurst,Brooklyn,18.00 ,3.85 ,0.91 
+Bergen Beach,Manhattan,0.00 ,4.09 ,0.99 
+Bloomfield,0.00 ,0.00 ,0.00 ,0.00 
+Boerum Hill,Manhattan,35.00 ,6.97 ,0.95 
+Borough Park,Manhattan,11.00 ,5.17 ,0.95 
+Brighton Beach,Manhattan,9.00 ,6.73 ,0.93 
+Prospect-Lefferts Gardens,Manhattan,95.00 ,7.82 ,0.94 
+Mott Haven,Manhattan,15.00 ,6.49 ,0.97 
+Bronxdale,Brooklyn,6.00 ,4.46 ,0.96 
+Breezy Point,Brooklyn,0.00 ,12.00 ,1.00 
+Briarwood,Brooklyn,6.00 ,7.62 ,0.99 
+Brooklyn Heights,Manhattan,26.00 ,8.23 ,0.98 
+Brownsville,Brooklyn,12.00 ,4.78 ,0.92 
+Bull's Head,Manhattan,2.00 ,1.00 ,1.00 
+Bushwick,Manhattan,392.00 ,6.68 ,0.92 
+Cambria Heights,Manhattan,2.00 ,5.53 ,0.94 
+"Chelsea, Staten Island",0.00 ,0.00 ,0.00 ,0.00 
+Chinatown,Manhattan,59.00 ,8.04 ,0.93 
+City Island,Brooklyn,5.00 ,4.09 ,0.92 
+Cypress Hills,Brooklyn,27.00 ,2.94 ,0.98 
+Canarsie,Manhattan,48.00 ,4.75 ,0.93 
+Carroll Gardens,Manhattan,41.00 ,7.69 ,0.93 
+Castle Hill,Brooklyn,0.00 ,12.50 ,0.90 
+Castleton Corners,Brooklyn,1.00 ,3.75 ,0.78 
+Grant City,Manhattan,3.00 ,1.00 ,1.00 
+Charleston,0.00 ,0.00 ,0.00 ,0.00 
+Chelsea,Manhattan,178.00 ,8.19 ,0.92 
+Civic Center,Manhattan,6.00 ,8.52 ,0.94 
+Claremont Village,Brooklyn,3.00 ,1.00 ,0.70 
+Clason Point,Manhattan,12.00 ,4.35 ,0.91 
+Clifton,Brooklyn,7.00 ,9.86 ,0.99 
+Clinton Hill,Manhattan,96.00 ,8.34 ,0.93 
+Co-op City,Brooklyn,1.00 ,8.67 ,1.00 
+Cobble Hill,Manhattan,21.00 ,8.61 ,0.96 
+College Point,Manhattan,4.00 ,5.00 ,0.99 
+Crown Heights,Manhattan,291.00 ,7.06 ,0.93 
+Columbia St,Brooklyn,5.00 ,13.60 ,0.82 
+Concord,Brooklyn,9.00 ,4.35 ,1.00 
+Concourse,Manhattan,8.00 ,7.68 ,0.83 
+Concourse Village,Brooklyn,3.00 ,1.00 ,1.00 
+Coney Island,Brooklyn,2.00 ,9.07 ,0.86 
+Corona,Manhattan,29.00 ,2.17 ,0.98 
+Mount Eden,Queens,0.00 ,0.00 ,0.00 
+Jamaica Hills,Brooklyn,0.00 ,1.00 ,1.00 
+Country Club,0.00 ,0.00 ,0.00 ,0.00 
+Mount Hope,Brooklyn,5.00 ,6.50 ,0.96 
+DUMBO,Brooklyn,6.00 ,9.33 ,0.95 
+Dongan Hills,Manhattan,1.00 ,8.67 ,0.72 
+Douglaston,Brooklyn,5.00 ,5.86 ,0.99 
+Downtown Brooklyn,Manhattan,13.00 ,9.38 ,0.93 
+Dyker Heights,Manhattan,6.00 ,8.75 ,0.95 
+Glen Oaks,0.00 ,0.00 ,0.00 ,0.00 
+East Elmhurst,Manhattan,49.00 ,2.87 ,0.98 
+East Flatbush,Manhattan,104.00 ,5.49 ,0.95 
+East Harlem,Brooklyn,219.00 ,6.80 ,0.93 
+East Morrisania,Brooklyn,5.00 ,2.57 ,0.98 
+Eltingville,Manhattan,2.00 ,1.00 ,1.00 
+Emerson Hill,Manhattan,0.00 ,8.67 ,0.94 
+Elmhurst,Brooklyn,47.00 ,3.57 ,0.96 
+Fieldston,Brooklyn,0.00 ,12.33 ,0.94 
+East New York,Brooklyn,59.00 ,4.75 ,0.96 
+East Village,Manhattan,280.00 ,8.25 ,0.93 
+Eastchester,Manhattan,9.00 ,1.00 ,0.95 
+Edenwald,Manhattan,4.00 ,1.00 ,0.85 
+Edgemere,Brooklyn,1.00 ,5.13 ,0.84 
+Glendale,Manhattan,19.00 ,3.03 ,0.97 
+Far Rockaway,Bronx,3.00 ,6.44 ,0.92 
+Jamaica Estates,Manhattan,4.00 ,2.22 ,0.90 
+Financial District,Brooklyn,61.00 ,7.54 ,0.93 
+Flatbush,Manhattan,124.00 ,6.44 ,0.94 
+Flatiron District,Brooklyn,14.00 ,12.33 ,0.89 
+Flatlands,Manhattan,12.00 ,4.07 ,0.92 
+Laurelton,Brooklyn,3.00 ,3.36 ,1.00 
+Shore Acres,Brooklyn,2.00 ,2.38 ,0.99 
+Flushing,Manhattan,101.00 ,3.46 ,0.96 
+Gowanus,Manhattan,50.00 ,6.90 ,0.95 
+Forest Hills,Brooklyn,27.00 ,6.04 ,0.97 
+Fort Greene,Manhattan,81.00 ,8.64 ,0.94 
+Fort Hamilton,Manhattan,10.00 ,8.44 ,0.91 
+Fort Wadsworth,Manhattan,1.00 ,1.00 ,1.00 
+Fresh Meadows,Brooklyn,10.00 ,3.75 ,0.99 
+Gramercy,Brooklyn,56.00 ,8.38 ,0.91 
+Graniteville,Brooklyn,0.00 ,4.67 ,1.00 
+Gravesend,Brooklyn,18.00 ,6.03 ,0.95 
+Kensington,Brooklyn,13.00 ,8.39 ,0.91 
+Kew Gardens,Queens,9.00 ,3.75 ,0.97 
+Parkchester,Manhattan,8.00 ,3.15 ,0.99 
+Pelham Bay,Manhattan,3.00 ,4.67 ,0.96 
+Great Kills,Manhattan,7.00 ,3.44 ,1.00 
+Huguenot,Brooklyn,1.00 ,12.50 ,1.00 
+Greenpoint,Brooklyn,152.00 ,7.74 ,0.92 
+Greenwich Village,Brooklyn,41.00 ,8.98 ,0.92 
+Grymes Hill,Manhattan,1.00 ,6.75 ,1.00 
+Harlem,Manhattan,552.00 ,7.66 ,0.92 
+Queens Village,Brooklyn,10.00 ,3.94 ,0.98 
+Hell's Kitchen,Manhattan,315.00 ,7.89 ,0.89 
+Highbridge,Queens,6.00 ,9.07 ,0.95 
+Hollis,Brooklyn,3.00 ,6.15 ,0.96 
+Hollis Hills,0.00 ,0.00 ,0.00 ,0.00 
+Holliswood,Brooklyn,0.00 ,6.50 ,0.95 
+Howard Beach,Brooklyn,5.00 ,5.19 ,0.97 
+Howard Beach,Brooklyn,5.00 ,5.19 ,0.97 
+Howland Hook,Brooklyn,0.00 ,24.00 ,0.65 
+Pelham Gardens,Brooklyn,16.00 ,3.38 ,0.96 
+Hunts Point,Manhattan,2.00 ,2.83 ,0.99 
+Inwood,Brooklyn,39.00 ,5.98 ,0.91 
+Jackson Heights,Brooklyn,35.00 ,3.14 ,0.96 
+Jamaica,Brooklyn,41.00 ,4.74 ,0.96 
+Morris Park,Manhattan,8.00 ,10.53 ,0.97 
+Kew Gardens Hills,Brooklyn,1.00 ,2.10 ,0.97 
+Kingsbridge,Brooklyn,4.00 ,6.81 ,0.89 
+Kips Bay,Brooklyn,42.00 ,8.68 ,0.93 
+Lighthouse Hill,Manhattan,0.00 ,6.50 ,0.90 
+Little Italy,Brooklyn,16.00 ,6.92 ,0.76 
+Little Neck,Manhattan,2.00 ,1.00 ,1.00 
+Morrisania,Manhattan,0.00 ,18.25 ,0.83 
+Murray Hill,Queens,105.00 ,7.40 ,0.95 
+Long Island City,Brooklyn,94.00 ,7.45 ,0.93 
+Longwood,Manhattan,10.00 ,6.27 ,0.96 
+Lower East Side,Manhattan,138.00 ,8.46 ,0.92 
+Manhattan Beach,Manhattan,4.00 ,3.20 ,0.97 
+Marble Hill,Brooklyn,3.00 ,5.86 ,1.00 
+Midtown,Brooklyn,240.00 ,8.29 ,0.93 
+Midwood,Brooklyn,19.00 ,5.87 ,0.91 
+Norwood,Queens,2.00 ,9.18 ,0.91 
+Oakwood,Queens,0.00 ,6.75 ,0.88 
+Morris Heights,Manhattan,2.00 ,1.00 ,1.00 
+Pleasant Plains,Queens,0.00 ,1.00 ,1.00 
+Mariners Harbor,Manhattan,0.00 ,1.00 ,1.00 
+Maspeth,Manhattan,22.00 ,6.21 ,0.91 
+Melrose,Brooklyn,0.00 ,12.00 ,0.90 
+Middle Village,Brooklyn,11.00 ,4.47 ,0.92 
+Midland Beach,Manhattan,1.00 ,12.00 ,0.67 
+Mill Basin,Manhattan,0.00 ,1.00 ,1.00 
+Morningside Heights,Brooklyn,39.00 ,7.09 ,0.94 
+Olinville,Brooklyn,0.00 ,1.00 ,1.00 
+Navy Yard,Manhattan,3.00 ,4.14 ,0.88 
+Neponsit,Brooklyn,1.00 ,12.50 ,1.00 
+New Brighton,Manhattan,2.00 ,9.80 ,0.97 
+New Dorp,Manhattan,0.00 ,0.00 ,0.00 
+New Dorp Beach,Brooklyn,0.00 ,1.00 ,1.00 
+New Springville,Brooklyn,2.00 ,3.20 ,1.00 
+NoHo,Manhattan,10.00 ,8.00 ,0.96 
+Nolita,Queens,50.00 ,9.67 ,0.92 
+North Riverdale,Manhattan,0.00 ,3.75 ,0.80 
+Park Slope,Manhattan,105.00 ,8.93 ,0.95 
+Port Morris,Manhattan,9.00 ,4.08 ,0.98 
+Port Richmond,Bronx,0.00 ,7.29 ,0.86 
+Prince's Bay,Brooklyn,0.00 ,1.00 ,1.00 
+Prospect Heights,Queens,81.00 ,7.73 ,0.93 
+Randall Manor,Manhattan,4.00 ,5.53 ,0.90 
+Riverdale,Brooklyn,2.00 ,8.00 ,0.95 
+Silver Lake,Brooklyn,1.00 ,6.50 ,0.97 
+SoHo,Brooklyn,61.00 ,6.73 ,0.94 
+Woodrow,Brooklyn,0.00 ,0.00 ,0.00 
+Red Hook,Manhattan,21.00 ,10.22 ,0.90 
+Rego Park,Brooklyn,13.00 ,7.05 ,0.93 
+Richmond Hill,Brooklyn,14.00 ,6.12 ,0.97 
+Richmondtown,Manhattan,1.00 ,1.00 ,1.00 
+Ridgewood,Manhattan,51.00 ,5.24 ,0.95 
+Sea Gate,Brooklyn,0.00 ,6.50 ,0.96 
+Rockaway Beach,Brooklyn,18.00 ,7.56 ,0.98 
+Roosevelt Island,Manhattan,9.00 ,8.64 ,0.94 
+Rosebank,Brooklyn,1.00 ,4.67 ,0.96 
+Rosedale,Manhattan,8.00 ,2.26 ,0.93 
+Rossville,Brooklyn,0.00 ,6.50 ,0.93 
+Schuylerville,Staten Island,1.00 ,12.17 ,0.90 
+Sheepshead Bay,Manhattan,28.00 ,5.22 ,0.94 
+South Beach,Manhattan,0.00 ,3.75 ,1.00 
+South Ozone Park,Manhattan,12.00 ,2.72 ,0.98 
+South Slope,Brooklyn,72.00 ,8.42 ,0.94 
+Springfield Gardens,Manhattan,19.00 ,4.93 ,0.97 
+Spuyten Duyvil,Brooklyn,1.00 ,8.33 ,1.00 
+St. Albans,Manhattan,19.00 ,5.65 ,0.95 
+Tompkinsville,Staten Island,10.00 ,5.06 ,0.93 
+St. George,Manhattan,21.00 ,3.76 ,0.97 
+Stapleton,Manhattan,12.00 ,8.18 ,0.90 
+Stuyvesant Town,Staten Island,0.00 ,3.75 ,0.86 
+Sunnyside,Staten Island,73.00 ,6.30 ,0.96 
+Van Nest,Brooklyn,6.00 ,8.77 ,0.92 
+Sunset Park,Manhattan,66.00 ,5.58 ,0.95 
+Theater District,Manhattan,20.00 ,11.12 ,0.90 
+Throgs Neck,Brooklyn,7.00 ,3.09 ,0.98 
+Todt Hill,Manhattan,1.00 ,1.00 ,1.00 
+Tottenville,Manhattan,2.00 ,3.75 ,1.00 
+Tremont,Manhattan,3.00 ,10.33 ,0.90 
+Tribeca,Manhattan,13.00 ,8.65 ,0.93 
+Two Bridges,Brooklyn,14.00 ,7.94 ,0.89 
+Vinegar Hill,Staten Island,4.00 ,8.79 ,0.90 
+Woodside,Manhattan,49.00 ,5.91 ,0.95 
+Unionport,Manhattan,2.00 ,4.67 ,0.90 
+University Heights,Manhattan,1.00 ,0.00 ,0.00 
+Upper East Side,Brooklyn,226.00 ,7.34 ,0.92 
+Upper West Side,Manhattan,235.00 ,7.88 ,0.93 
+Windsor Terrace,Manhattan,25.00 ,10.33 ,0.93 
+Wakefield,Manhattan,4.00 ,8.72 ,0.93 
+Washington Heights,Queens,115.00 ,6.34 ,0.92 
+West Brighton,Brooklyn,1.00 ,8.53 ,0.91 
+West Farms,Brooklyn,0.00 ,12.00 ,1.00 
+Woodhaven,Manhattan,20.00 ,2.55 ,0.95 
+Woodlawn,Brooklyn,2.00 ,14.17 ,1.00 
+West Village,Queens,101.00 ,8.40 ,0.91 
+Westchester Square,Manhattan,0.00 ,4.67 ,1.00 
+Westerleigh,Brooklyn,1.00 ,24.00 ,1.00 
+Williamsbridge,Bronx,14.00 ,6.27 ,0.96 
+Williamsburg,Queens,628.00 ,8.08 ,0.92 
+Willowbrook,Bronx,0.00 ,0.00 ,0.00 
