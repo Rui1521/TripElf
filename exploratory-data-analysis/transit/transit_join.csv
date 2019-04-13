@@ -1,0 +1,234 @@
+neighbourhood,neighbourhood_group,busstop_count,subway_entrance_count
+Bayswater,Manhattan,0,1
+Allerton,Manhattan,23,5
+City Island,Brooklyn,2,0
+Ditmars Steinway,Brooklyn,29,6
+Ozone Park,Brooklyn,25,14
+Fordham,Manhattan,29,20
+Whitestone,Manhattan,16,0
+Arden Heights,Manhattan,8,0
+Arrochar,Brooklyn,8,0
+Arverne,Manhattan,4,8
+Bay Ridge,Manhattan,12,7
+Belmont,Manhattan,13,0
+Gerritsen Beach,Brooklyn,4,0
+Port Ivory,0,0,0
+Soundview,Manhattan,19,3
+Astoria,Manhattan,44,16
+Bath Beach,Brooklyn,8,3
+Bayside,Brooklyn,22,0
+Battery Park City,Manhattan,3,0
+Bay Terrace,Brooklyn,14,0
+"Bay Terrace, Staten Island",Manhattan,1,2
+Baychester,Brooklyn,10,0
+Bayswater,Manhattan,0,1
+Bedford-Stuyvesant,Brooklyn,90,41
+Belle Harbor,Manhattan,1,0
+Bellerose,Manhattan,15,0
+Bensonhurst,Brooklyn,14,18
+Bergen Beach,Manhattan,5,0
+Bloomfield,0,0,0
+Boerum Hill,Manhattan,6,6
+Borough Park,Manhattan,29,32
+Brighton Beach,Manhattan,25,19
+Prospect-Lefferts Gardens,Manhattan,24,8
+Mott Haven,Manhattan,24,31
+Bronxdale,Brooklyn,6,3
+Breezy Point,Brooklyn,1,0
+Briarwood,Brooklyn,8,6
+Brooklyn Heights,Manhattan,4,9
+Brownsville,Brooklyn,40,14
+Bull's Head,Manhattan,8,0
+Bushwick,Manhattan,19,26
+Cambria Heights,Manhattan,8,0
+"Chelsea, Staten Island",0,1,0
+Chinatown,Manhattan,6,7
+City Island,Brooklyn,2,0
+Cypress Hills,Brooklyn,16,12
+Canarsie,Manhattan,23,5
+Carroll Gardens,Manhattan,3,5
+Castle Hill,Brooklyn,7,0
+Castleton Corners,Brooklyn,7,0
+Grant City,Manhattan,2,3
+Charleston,0,1,0
+Chelsea,Manhattan,24,70
+Civic Center,Manhattan,1,12
+Claremont Village,Brooklyn,15,3
+Clason Point,Manhattan,6,0
+Clifton,Brooklyn,11,2
+Clinton Hill,Manhattan,9,15
+Co-op City,Brooklyn,28,0
+Cobble Hill,Manhattan,2,3
+College Point,Manhattan,17,0
+Crown Heights,Manhattan,61,20
+Columbia St,Brooklyn,4,0
+Concord,Brooklyn,6,3
+Concourse,Manhattan,8,23
+Concourse Village,Brooklyn,15,3
+Coney Island,Brooklyn,13,0
+Corona,Manhattan,18,5
+Mount Eden,Queens,1,8
+Jamaica Hills,Brooklyn,8,3
+Country Club,0,0,0
+Mount Hope,Brooklyn,12,11
+DUMBO,Brooklyn,1,0
+Dongan Hills,Manhattan,5,4
+Douglaston,Brooklyn,1,0
+Downtown Brooklyn,Manhattan,23,37
+Dyker Heights,Manhattan,16,0
+Glen Oaks,0,7,0
+East Elmhurst,Manhattan,32,0
+East Flatbush,Manhattan,45,16
+East Harlem,Brooklyn,63,17
+East Morrisania,Brooklyn,8,8
+Eltingville,Manhattan,9,2
+Emerson Hill,Manhattan,2,0
+Elmhurst,Brooklyn,27,20
+Fieldston,Brooklyn,2,2
+East New York,Brooklyn,52,26
+East Village,Manhattan,32,14
+Eastchester,Manhattan,9,3
+Edenwald,Manhattan,12,0
+Edgemere,Brooklyn,9,8
+Glendale,Manhattan,12,2
+Far Rockaway,Bronx,9,3
+Jamaica Estates,Manhattan,17,8
+Financial District,Brooklyn,14,68
+Flatbush,Manhattan,21,12
+Flatiron District,Brooklyn,8,21
+Flatlands,Manhattan,15,0
+Laurelton,Brooklyn,7,0
+Shore Acres,Brooklyn,3,0
+Flushing,Manhattan,122,11
+Gowanus,Manhattan,0,6
+Forest Hills,Brooklyn,29,14
+Fort Greene,Manhattan,15,19
+Fort Hamilton,Manhattan,15,7
+Fort Wadsworth,Manhattan,0,0
+Fresh Meadows,Brooklyn,20,0
+Gramercy,Brooklyn,10,8
+Graniteville,Brooklyn,8,0
+Gravesend,Brooklyn,39,26
+Kensington,Brooklyn,8,10
+Kew Gardens,Queens,11,6
+Parkchester,Manhattan,25,4
+Pelham Bay,Manhattan,9,7
+Great Kills,Manhattan,4,2
+Huguenot,Brooklyn,2,0
+Greenpoint,Brooklyn,6,11
+Greenwich Village,Brooklyn,7,12
+Grymes Hill,Manhattan,1,0
+Harlem,Manhattan,115,51
+Queens Village,Brooklyn,20,0
+Hell's Kitchen,Manhattan,20,20
+Highbridge,Queens,6,0
+Hollis,Brooklyn,6,1
+Hollis Hills,0,5,0
+Holliswood,Brooklyn,5,0
+Howard Beach,Brooklyn,10,4
+Howard Beach,Brooklyn,10,4
+Howland Hook,Brooklyn,5,0
+Pelham Gardens,Brooklyn,11,1
+Hunts Point,Manhattan,6,0
+Inwood,Brooklyn,18,21
+Jackson Heights,Brooklyn,11,13
+Jamaica,Brooklyn,71,33
+Morris Park,Manhattan,18,1
+Kew Gardens Hills,Brooklyn,22,0
+Kingsbridge,Brooklyn,48,11
+Kips Bay,Brooklyn,14,0
+Lighthouse Hill,Manhattan,1,0
+Little Italy,Brooklyn,0,0
+Little Neck,Manhattan,3,0
+Morrisania,Manhattan,9,0
+Murray Hill,Queens,15,9
+Long Island City,Brooklyn,45,49
+Longwood,Manhattan,34,28
+Lower East Side,Manhattan,28,16
+Manhattan Beach,Manhattan,6,0
+Marble Hill,Brooklyn,3,2
+Midtown,Brooklyn,66,111
+Midwood,Brooklyn,27,11
+Norwood,Queens,20,13
+Oakwood,Queens,3,3
+Morris Heights,Manhattan,13,3
+Pleasant Plains,Queens,0,1
+Mariners Harbor,Manhattan,6,0
+Maspeth,Manhattan,24,0
+Melrose,Brooklyn,5,4
+Middle Village,Brooklyn,6,1
+Midland Beach,Manhattan,7,0
+Mill Basin,Manhattan,7,0
+Morningside Heights,Brooklyn,25,11
+Olinville,Brooklyn,1,4
+Navy Yard,Manhattan,1,0
+Neponsit,Brooklyn,1,0
+New Brighton,Manhattan,2,0
+New Dorp,Manhattan,7,2
+New Dorp Beach,Brooklyn,13,0
+New Springville,Brooklyn,9,0
+NoHo,Manhattan,0,8
+Nolita,Queens,1,2
+North Riverdale,Manhattan,8,0
+Park Slope,Manhattan,8,14
+Port Morris,Manhattan,2,0
+Port Richmond,Bronx,4,0
+Prince's Bay,Brooklyn,3,3
+Prospect Heights,Queens,3,4
+Randall Manor,Manhattan,7,0
+Riverdale,Brooklyn,2,0
+Silver Lake,Brooklyn,4,0
+SoHo,Brooklyn,7,30
+Woodrow,Brooklyn,2,4
+Red Hook,Manhattan,10,0
+Rego Park,Brooklyn,23,9
+Richmond Hill,Brooklyn,46,19
+Richmondtown,Manhattan,1,0
+Ridgewood,Manhattan,19,11
+Sea Gate,Brooklyn,0,0
+Rockaway Beach,Brooklyn,8,4
+Roosevelt Island,Manhattan,0,1
+Rosebank,Brooklyn,1,0
+Rosedale,Manhattan,5,0
+Rossville,Brooklyn,6,0
+Schuylerville,Staten Island,3,0
+Sheepshead Bay,Manhattan,64,6
+South Beach,Manhattan,5,2
+South Ozone Park,Manhattan,7,0
+South Slope,Brooklyn,4,6
+Springfield Gardens,Manhattan,9,0
+Spuyten Duyvil,Brooklyn,3,0
+St. Albans,Manhattan,25,0
+Tompkinsville,Staten Island,2,0
+St. George,Manhattan,11,1
+Stapleton,Manhattan,9,3
+Stuyvesant Town,Staten Island,18,2
+Sunnyside,Staten Island,31,18
+Van Nest,Brooklyn,12,5
+Sunset Park,Manhattan,20,23
+Theater District,Manhattan,2,43
+Throgs Neck,Brooklyn,13,0
+Todt Hill,Manhattan,1,0
+Tottenville,Manhattan,2,11
+Tremont,Manhattan,6,0
+Tribeca,Manhattan,6,32
+Two Bridges,Brooklyn,4,0
+Vinegar Hill,Staten Island,4,1
+Woodside,Manhattan,15,12
+Unionport,Manhattan,17,2
+University Heights,Manhattan,6,3
+Upper East Side,Brooklyn,65,52
+Upper West Side,Manhattan,106,56
+Windsor Terrace,Manhattan,7,7
+Wakefield,Manhattan,13,10
+Washington Heights,Queens,62,38
+West Brighton,Brooklyn,5,0
+West Farms,Brooklyn,7,5
+Woodhaven,Manhattan,7,7
+Woodlawn,Brooklyn,6,0
+West Village,Queens,7,19
+Westchester Square,Manhattan,4,4
+Westerleigh,Brooklyn,0,0
+Williamsbridge,Bronx,10,2
+Williamsburg,Queens,44,43
+Willowbrook,Bronx,1,0
