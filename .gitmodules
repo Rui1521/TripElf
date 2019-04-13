@@ -1,0 +1,6 @@
+[submodule "map-flask"]
+	path = map-flask
+	url = https://github.com/zexihan/map-flask
+[submodule "map-react"]
+	path = map-react
+	url = https://github.com/zexihan/map-react
