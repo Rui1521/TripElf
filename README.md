@@ -6,8 +6,11 @@ Zexi Han, Rui Wang, Wenyi Jin, Qinyu Chen
 
 ## Links
 
-About the project: https://tripelf.herokuapp.com/about
-Video tutorial: https://tripelf.herokuapp.com/tutorial
+[Landing Page](https://tripelf.herokuapp.com/)
+
+[About the Project](https://tripelf.herokuapp.com/about)
+
+[Video Tutorial](https://tripelf.herokuapp.com/tutorial)
 
 ## Intro
 
